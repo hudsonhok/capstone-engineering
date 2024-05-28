@@ -1,0 +1,90 @@
+13:20:38 **** Incremental Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+[leds_eclipse build complete]
+13:20:40 **** Incremental Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+[leds_eclipse build complete]
+11:15:13 **** Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+Info: Linking leds_eclipse.elf
+nios2-elf-g++ -T'../leds_eclipse_bsp//linker.x' -msys-crt0='../leds_eclipse_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../leds_eclipse_bsp/ -msmallc  -Wl,-Map=leds_eclipse.map   -Os -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o leds_eclipse.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert leds_eclipse.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "/acct/hhok/csce491/lab2" --jdi ../..//output_files/lights.jdi --sopcinfo /acct/hhok/csce491/lab2/software/leds_eclipse_bsp/../../nios_system.sopcinfo
+Picked up _JAVA_OPTIONS: -Duser.home=/acct/hhok
+Info: (leds_eclipse.elf) 12 KBytes program size (code + initialized data).
+Info:                    131059 KBytes free for stack + heap.
+Info: Creating leds_eclipse.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source leds_eclipse.elf >leds_eclipse.objdump
+[leds_eclipse build complete]
+11:15:14 **** Incremental Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+[leds_eclipse build complete]
+11:16:30 **** Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../leds_eclipse_bsp//HAL/inc -I../leds_eclipse_bsp/ -I../leds_eclipse_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'main':
+hello_world_small.c:18:10: warning: unused variable 'temp' [-Wunused-variable]
+  alt_u64 temp;
+          ^
+hello_world_small.c:17:10: warning: unused variable 'pwm_duty_cycle' [-Wunused-variable]
+  alt_u64 pwm_duty_cycle;
+          ^
+hello_world_small.c:56:12: warning: 'duty_cycle_cycles' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         if (count % pwm_period_cycles < duty_cycle_cycles)
+            ^
+Info: Linking leds_eclipse.elf
+nios2-elf-g++ -T'../leds_eclipse_bsp//linker.x' -msys-crt0='../leds_eclipse_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../leds_eclipse_bsp/ -msmallc  -Wl,-Map=leds_eclipse.map   -Os -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o leds_eclipse.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert leds_eclipse.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "/acct/hhok/csce491/lab2" --jdi ../..//output_files/lights.jdi --sopcinfo /acct/hhok/csce491/lab2/software/leds_eclipse_bsp/../../nios_system.sopcinfo
+Picked up _JAVA_OPTIONS: -Duser.home=/acct/hhok
+Info: (leds_eclipse.elf) 12 KBytes program size (code + initialized data).
+Info:                    131059 KBytes free for stack + heap.
+Info: Creating leds_eclipse.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source leds_eclipse.elf >leds_eclipse.objdump
+[leds_eclipse build complete]
+11:16:31 **** Incremental Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+[leds_eclipse build complete]
+11:37:50 **** Incremental Build of configuration Nios II for project leds_eclipse ****
+make all 
+Info: Building ../leds_eclipse_bsp/
+make --no-print-directory -C ../leds_eclipse_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../leds_eclipse_bsp//HAL/inc -I../leds_eclipse_bsp/ -I../leds_eclipse_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+hello_world_small.c: In function 'main':
+hello_world_small.c:18:10: warning: unused variable 'temp' [-Wunused-variable]
+  alt_u64 temp;
+          ^
+hello_world_small.c:17:10: warning: unused variable 'pwm_duty_cycle' [-Wunused-variable]
+  alt_u64 pwm_duty_cycle;
+          ^
+hello_world_small.c:58:12: warning: 'duty_cycle_cycles' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         if (count % pwm_period_cycles < duty_cycle_cycles) // if the current time is less than the duration of the "on" portion of the PWM cycle
+            ^
+Info: Linking leds_eclipse.elf
+nios2-elf-g++ -T'../leds_eclipse_bsp//linker.x' -msys-crt0='../leds_eclipse_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../leds_eclipse_bsp/ -msmallc  -Wl,-Map=leds_eclipse.map   -Os -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o leds_eclipse.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert leds_eclipse.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "/acct/hhok/csce491/lab2" --jdi ../..//output_files/lights.jdi --sopcinfo /acct/hhok/csce491/lab2/software/leds_eclipse_bsp/../../nios_system.sopcinfo
+Picked up _JAVA_OPTIONS: -Duser.home=/acct/hhok
+Info: (leds_eclipse.elf) 12 KBytes program size (code + initialized data).
+Info:                    131059 KBytes free for stack + heap.
+Info: Creating leds_eclipse.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source leds_eclipse.elf >leds_eclipse.objdump
+[leds_eclipse build complete]

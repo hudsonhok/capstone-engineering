@@ -1,0 +1,19 @@
+11:23:32 **** Incremental Build of configuration Nios II for project tur_nup ****
+make all 
+Info: Building ../tur_nup_bsp/
+make --no-print-directory -C ../tur_nup_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../tur_nup_bsp//HAL/inc -I../tur_nup_bsp/ -I../tur_nup_bsp//drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world.o hello_world.c
+Info: Linking tur_nup.elf
+nios2-elf-g++ -T'../tur_nup_bsp//linker.x' -msys-crt0='../tur_nup_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../tur_nup_bsp/   -Wl,-Map=tur_nup.map   -O0 -g -Wall  -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o tur_nup.elf obj/default/hello_world.o -lm -msys-lib=m
+nios2-elf-insert tur_nup.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "/acct/hhok/csce491/lab2" --jdi ../..//output_files/lights.jdi --sopcinfo /acct/hhok/csce491/lab2/software/tur_nup_bsp/../../nios_system.sopcinfo
+Picked up _JAVA_OPTIONS: -Duser.home=/acct/hhok
+Info: (tur_nup.elf) 15 KBytes program size (code + initialized data).
+Info:               131051 KBytes free for stack + heap.
+Info: Creating tur_nup.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source tur_nup.elf >tur_nup.objdump
+[tur_nup build complete]
+
+11:23:33 Build Finished (took 518ms)
+

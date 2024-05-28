@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <system.h>
+#include <math.h>
+#include <io.h>
+#include <alt_types.h>
+#include "sys/alt_stdio.h"
+#include <altera_avalon_performance_counter.h>
+
+int main() {
+    float pwm_freq = 10e3f;
+    float dim_period = 2.0f;
+
+    alt_u64 pwm_duty_cycle;
+    alt_u64 cnt;
+    alt_u64 count;
+    alt_u64 pwm_period_cycles,duty_cycle_cycles,dim_period_cycles;
+    alt_u32 lights;
+
+    alt_u64 last_adj_cycles = 0;
+    alt_u64 dim_adj_cycles = dim_period / 200.f * ALT_CPU_CPU_FREQ;
+
+    //useful periods in clock cycles
+    dim_period_cycles = dim_period * ALT_CPU_CPU_FREQ;
+    pwm_period_cycles = 1.f/pwm_freq * ALT_CPU_CPU_FREQ;
+
+    //prepare performance counter
+        IOWR(PERFORMANCE_COUNTER_0_BASE, 1, 0);
+
+    while (1) {
+        //take 64 bit counter, split into 2 32 bit sections
+        union {
+            struct {
+                alt_u32 lo;
+                alt_u32 hi;
+            } parts;
+            alt_u64 raw;
+        } cnt;
+
+        cnt.parts.hi = IORD(PERFORMANCE_COUNTER_0_BASE, 1);
+        cnt.parts.lo = IORD(PERFORMANCE_COUNTER_0_BASE, 0);
+        count = cnt.raw;
+
+
+        if (count - last_adj_cycles > dim_adj_cycles) {
+            //figure out pwm_duty_cycle percentage as decimal
+            float pwm_duty_cycle = fabs((count % dim_period_cycles) * (-2.f/dim_period_cycles) + 1.0f);
+
+            duty_cycle_cycles = (float)pwm_duty_cycle * pwm_period_cycles;
+            last_adj_cycles = count;
+        }
+
+        //change lights depending on the cycle we're on
+        if (count % pwm_period_cycles < duty_cycle_cycles)
+            lights = 1;
+        else
+            lights = 0;
+
+        IOWR(LEDS_BASE,0,0x3FFFFFFF * lights);
+    }
+
+    return 0;
+}

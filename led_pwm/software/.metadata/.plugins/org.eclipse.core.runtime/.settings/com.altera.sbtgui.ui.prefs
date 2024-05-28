@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=/acct/hhok/csce491/lab2/software/leds_eclipse
+newSoftwareExampleWizardPage.sopcinfoFile=/acct/hhok/csce491/lab2/nios_system.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=/acct/hhok/csce491/lab2/software/leds_eclipse_bsp
